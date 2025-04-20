@@ -1,12 +1,3 @@
-Steps:
-Pull the latest main branch changes:
-bash
-
-git pull origin main
-
-Edit index.html to add TAC generation and optimization within the <script> tag. Update the analyzeCode function to include:
-javascript
-
 function analyzeCode() {
     let code = document.getElementById("codeInput").value;
     let keywords = ["int", "float", "if", "else", "return", "while", "for"];
@@ -71,14 +62,3 @@ function analyzeCode() {
     document.getElementById("semanticList").innerHTML = semanticErrors.map(e => `<li class='error'>${e}</li>`).join("\n");
     document.getElementById("tacList").innerHTML = tacList.map(t => `<li>${t}</li>`).join("\n");
 }
-
-Stage and commit:
-bash
-
-git add index.html
-git commit -m "Add TAC generation and optimization"
-
-Push the branch:
-bash
-
-git push origin tac-generation
